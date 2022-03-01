@@ -1,0 +1,13 @@
+.idea/
+venv/
+dist/
+build/
+data/
+test.py
+test_cph.py
+*.pyc
+partea_docker_simulation
+partea_docker_simulation.zip
+.DS_Store
+Setup.cfg
+*pycache*
