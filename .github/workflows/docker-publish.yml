@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag registry.blitzhub.io/partea_cli
+      
+    - name: Login to Blitzhub
+      uses: docker/login-action@v1
+      with:
+        registry: registry.blitzhub.io
+        username: ${{ secrets.BLITZHUB_USERNAME }}
+        password: ${{ secrets.BLITZHUB_PW }}
+        
+    - name: Push to Blitzhub
+      run: docker push registry.blitzhub.io/partea_cli
