@@ -8,7 +8,7 @@ def parse_arguments():
     parser.add_argument("-path", dest="path", help="enter your file path", type=str, required=True)
     parser.add_argument("-pw", dest="password", help="enter your password", type=str, default=None, nargs='?')
     parser.add_argument("-server_url", dest="server_url", help="enter your server", type=str, nargs='?',
-                        default='https://exbio.wzw.tum.de/partea/api/client')
+                        default='https://partea-api.zbh.uni-hamburg.de/client')
     parser.add_argument("-duration_col", dest="duration_col", help="enter your time column", type=str, nargs='?',
                         default='time', required=True)
     parser.add_argument("-event_col", dest="event_col", help="enter your event column", type=str, nargs='?',
